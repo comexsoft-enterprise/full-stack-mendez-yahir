@@ -1,31 +1,30 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
-function App() {
-  const [pokemon, setPokemon] = useState([])
+export default function App() {
+  // const [pokemon, setPokemon] = useState([])
 
-  useEffect(()=>{
+  // useEffect(()=>{
 
-  },[])
+  // },[])
 
-  async function getPokemon(page){
+  // async function getPokemon(page){
 
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=${}&offset=${}`).then(res =>
-      res.json()
-    ).then(data => {
-      console.log(data)
-    })
-  }
+  //   fetch(`https://pokeapi.co/api/v2/pokemon?limit=${}&offset=${}`).then(res =>
+  //     res.json()
+  //   ).then(data => {
+  //     console.log(data)
+  //   })
+  // }
 
-  return (
-    <>
-      {
-        /*
-          Lista de pokemon
-        */
-      }
-    </>
-  )
+  // return (
+  //   <>
+  //     {
+  //       /*
+  //         Lista de pokemon
+  //       */
+  //     }
+  //   </>
+  // )
+  return "In Development";
 }
-
-export default App
