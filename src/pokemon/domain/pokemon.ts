@@ -1,4 +1,4 @@
-import { Location } from './location';
+import { PokemonLocation } from './pokemon-location';
 import { Skill } from './skill';
 import { Stat } from './stat';
 
@@ -10,5 +10,5 @@ export interface Pokemon{
     baseExperience:number,
     skills:Skill[],
     stats:Stat[],
-    locations:Location[],
+    encounters:PokemonLocation[],
 }
