@@ -51,7 +51,7 @@ The user interface was carefully crafted to ensure a premium and engaging experi
 
 ## 🏗️ Architecture
 
-The project follows a **Hexagonal/Layered Architecture** to separate concerns:
+The project follows a **Clean Architecture** approach to separate concerns:
 
 - **Domain:** Core entities (`Pokemon`, `Stat`, `Skill`) independent of external frameworks.
 - **Application:** Use Cases (`GetPokemonByName`, `ListPokemon`) that orchestrate business logic.
