@@ -3,10 +3,8 @@ export interface PokemonFromApi {
     name: string,
     base_experience:number,
     sprites:{
-        home:{
-            front_default:string, 
-            front_shiny:string, //fallback
-        },
+        front_default:string, 
+        front_shiny:string, //fallback
         other:{
             showdown:{
                 front_default:string,

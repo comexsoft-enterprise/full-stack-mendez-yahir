@@ -4,7 +4,7 @@ import { PokemonListFromApi } from "../dto/pokemon-list-from-api";
 import { SkillFromApi } from "../dto/skill-from-api";
 
 export class PokemonApiService{
-    constructor(private readonly API_URL = "`https://pokeapi.co/api/v2/pokemon`"){}
+    constructor(private readonly API_URL = "https://pokeapi.co/api/v2/pokemon"){}
 
 
 
