@@ -1,4 +1,4 @@
-export interface EncountersFromApi{
+export interface EncounterFromApi{
     location_area:{
         name:string,
     },
