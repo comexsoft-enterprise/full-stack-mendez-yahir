@@ -1,0 +1,81 @@
+.spinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.fullScreen {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #DD5449;
+    /* Pokemon Red */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.pokeballSpinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #333;
+    background: linear-gradient(to bottom, #DD5449 50%, white 50%);
+    position: relative;
+    animation: bounce 1s infinite alternate;
+}
+
+.pokeballSpinner::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #333;
+    transform: translateY(-50%);
+}
+
+.pokeballSpinner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 4px solid #333;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}

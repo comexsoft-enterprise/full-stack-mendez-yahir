@@ -1,0 +1,267 @@
+.panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    /* Fully hidden */
+    width: 400px;
+    height: 100vh;
+    background-color: #DD5449;
+    /* Pokedex Red */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* keep a thick border so the pokeball has something visual to "sit" on when open */
+    border-left: 15px solid #2C2C2C;
+}
+
+.panel.open {
+    right: 0;
+}
+
+.header {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    color: #2C2C2C;
+    border-bottom: 5px solid #2C2C2C;
+    transform: skewY(-2deg);
+    margin-bottom: 20px;
+    margin-top: -20px;
+    padding-top: 40px;
+}
+
+.name {
+    margin: 0;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageContainer {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.chartContainer {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.badges {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.badge_exp {
+    background-color: #4CAF50;
+    padding: 5px 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.badge_species {
+    background-color: #64B5F6;
+    padding: 5px 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.infoSection {
+    background-color: white;
+    color: black;
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.infoSection:hover {
+    transform: scale(1.02);
+}
+
+.infoSection h3 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.abilities {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.abilityBtn {
+    background-color: #E0E0E0;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.abilityBtn:hover {
+    background-color: #BDBDBD;
+}
+
+.abilityBtn:nth-child(odd) {
+    background-color: #D4E157;
+    /* Yellowish */
+    color: #555;
+}
+
+.abilityBtn:nth-child(even) {
+    background-color: #e57373;
+    /* Reddish */
+    color: white;
+}
+
+.locationSection {
+    width: 100%;
+}
+
+.locationBox {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.locationBox:hover {
+    transform: scale(1.02);
+}
+
+.locationBox p {
+    margin: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .panel {
+        width: 85%;
+        right: -85%;
+        border-left: 10px solid #2C2C2C;
+    }
+}
+
+/* Sub-panel styles */
+.subPanel {
+    width: 100%;
+    animation: fadeIn 0.3s ease;
+}
+
+.subPanel h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.backBtn {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.backBtn:hover {
+    background: white;
+    color: #D34F49;
+}
+
+.tableContainer {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    color: #333;
+    overflow-x: auto;
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.dataTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.dataTable tr:last-child td {
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1001;
+}

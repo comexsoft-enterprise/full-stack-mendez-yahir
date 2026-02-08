@@ -9,12 +9,22 @@ import { PokemonLocation } from "../../domain/pokemon-location";
 import { MapApiToEncounters } from "../../infrastructure/mappers/api-to-encounters";
 
 export class PokemonRepository implements IPokemonRepository {
-    constructor(private pokemonApiService:PokemonApiService){}
+    constructor(private pokemonApiService: PokemonApiService) { }
 
     async listPokemon(limit: number = 20, offset: number = 0): Promise<Pokemon[]> {
         const allPokemonFromAPi: PokemonFromApi[] = await this.pokemonApiService.getAll(limit, offset);
         return Promise.all(allPokemonFromAPi.map(async (pokemonFromAPi) => this.buildPokemon(pokemonFromAPi)));
     };
+
+    async getPokemonByName(name: string): Promise<Pokemon | null> {
+        const pokemonFromApi = await this.pokemonApiService.getByName(name);
+        if (!pokemonFromApi) return null;
+        return this.buildPokemon(pokemonFromApi);
+    }
+
+    async getAllNames(): Promise<string[]> {
+        return this.pokemonApiService.getAllNames();
+    }
 
     private async buildPokemon(pokemonFromAPi: PokemonFromApi) {
         const skillUrls: string[] = this.filterSkillUrls(pokemonFromAPi.abilities);

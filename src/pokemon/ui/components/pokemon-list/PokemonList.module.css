@@ -1,8 +1,15 @@
 .container {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(5rem,1fr)); 
-    gap: 1.2rem; 
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    gap: 1.2rem;
     justify-items: center;
     padding: 0;
+}
+
+.loadingItem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-column: 1 / -1;
 }

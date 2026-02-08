@@ -1,14 +1,16 @@
 export interface PokemonFromApi {
     id: number,
     name: string,
-    base_experience:number,
-    sprites:{
-        front_default:string, 
-        front_shiny:string, //fallback
-        other:{
-            showdown:{
-                front_default:string,
-                front_shiny:string, //fallback
+    base_experience: number,
+    sprites: {
+        other: {
+            showdown: {
+                front_default: string,
+                front_shiny: string, //fallback
+            },
+            home: {
+                front_default: string,
+                front_shiny: string, //fallback
             }
         }
     },
@@ -20,9 +22,9 @@ export interface PokemonFromApi {
     }[],
     location_area_encounters: string,
     abilities: {
-        ability:{
-            name:string,
-            url:string,
+        ability: {
+            name: string,
+            url: string,
         }
     }[],
 }
