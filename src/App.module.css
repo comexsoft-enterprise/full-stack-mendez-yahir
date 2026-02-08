@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 10vw; /* main | visible bar */
+  height: 100vh;
+}
+
+/* Main content */
+.container__main {
+  height: 100%;
+}
+
+/* Visible bar (affects layout) */
+.sidebar__docked {
+  background-color: red;
+  height: 100%;
+}
+
+/* Full panel overlay (absolute, relative units only) */
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30vw;          /* expanded width (relative) */
+  height: 100%;
+  background-color: red;
+  transform: translateX(100%); /* hidden to the right */
+  transition: transform 0.3s ease;
+
+  display: none;
+}
+
+/* When open */
+.sidebar.open {
+  transform: translateX(0);
+}

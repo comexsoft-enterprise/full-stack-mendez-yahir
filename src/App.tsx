@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import styles from './App.module.css'
 import { PokemonApiService } from './pokemon/infrastructure/services/pokemon-api-service';
 import { PokemonRepository } from './pokemon/application/repositories/pokemon-repository-impl';
 import { ListPokemonUseCase } from './pokemon/application/use-cases/list-pokemon';
 import { useListPokemon } from './pokemon/ui/hooks/use-list-pokemon';
 import { PokemonCard } from './pokemon/ui/components/pokemon-card/PokemonCard';
+import { PokemonList } from './pokemon/ui/components/pokemon-list/PokemonList';
 
 // dependencies configuration
 const service = new PokemonApiService();
@@ -20,17 +21,21 @@ export default function App() {
 
   if (loading) return <div>Is loading...</div>
   return (
-    <div>
-      <h1>Pokémon List</h1>
-      <ul>
-        {pokemon.map(p => (
-          <li key={p.id}>
-            {
-              <PokemonCard animatedImage={p.animatedImage} name={p.name}></PokemonCard>
-            }
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      <section className={styles.container__main}>
+        <header>POmeon</header>
+        <PokemonList pokemonList={pokemon}/>
+      </section>
+      {/* panel */}
+      <div className={styles.sidebar__docked}></div>
+      <section className={styles.sidebar}>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+      </section>
     </div>
   );
 
