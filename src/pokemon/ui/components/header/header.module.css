@@ -1,0 +1,45 @@
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title  switch"
+        "search search";
+    /* La búsqueda ocupa las dos columnas abajo */
+
+    gap:1.5rem;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-family: "Bangers", system-ui;
+    color: #DDC949;
+    -webkit-text-stroke: 1px #5157B6;
+    font-size: 2.5em;
+    font-weight: bold;
+    grid-area: title;
+    margin: 0;
+}
+
+.search {
+    grid-area: search;
+    width: 15rem;
+}
+
+/* component */
+.switch {
+    grid-area: switch;
+    
+}
+
+@media (min-width: 768px) {
+
+    .nav {
+        grid-template-columns: max-content 1fr max-content;
+        grid-template-areas: "title search switch";
+        height: 5rem;
+        padding: 0 5%;
+        gap: 4rem;
+    }
+}

@@ -1,19 +1,21 @@
 .container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 10vw; /* main | visible bar */
+  grid-template-columns: 85vw  15vw; /* main | visible bar */
   height: 100vh;
 }
 
 /* Main content */
 .container__main {
   height: 100%;
+  padding: .8rem;
 }
 
 /* Visible bar (affects layout) */
 .sidebar__docked {
-  background-color: red;
+  background-color: #DD5449;
   height: 100%;
+  width: 100%;
 }
 
 /* Full panel overlay (absolute, relative units only) */

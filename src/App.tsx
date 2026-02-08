@@ -6,6 +6,7 @@ import { ListPokemonUseCase } from './pokemon/application/use-cases/list-pokemon
 import { useListPokemon } from './pokemon/ui/hooks/use-list-pokemon';
 import { PokemonCard } from './pokemon/ui/components/pokemon-card/PokemonCard';
 import { PokemonList } from './pokemon/ui/components/pokemon-list/PokemonList';
+import { Header } from './pokemon/ui/components/header/header';
 
 // dependencies configuration
 const service = new PokemonApiService();
@@ -23,7 +24,7 @@ export default function App() {
   return (
     <div className={styles.container}>
       <section className={styles.container__main}>
-        <header>POmeon</header>
+        <Header/>
         <PokemonList pokemonList={pokemon}/>
       </section>
       {/* panel */}

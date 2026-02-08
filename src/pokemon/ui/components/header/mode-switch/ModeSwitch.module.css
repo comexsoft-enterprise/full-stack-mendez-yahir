@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  width: 9rem;
+  height: 3rem;
+  border: 4px solid #4a4a4a;
+  border-radius: 12px;
+  background-color: white;
+  overflow: hidden; 
+  
+  cursor: pointer;
+  user-select: none;
+  font-family: sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.5rem;
+  transition: all 0.2s ease;
+}
+
+/* --- ESTADOS --- */
+
+/* ESTADO OFF: [ MODO LIBRE (ancho) | OFF (estrecho) ] */
+.inactiveLeft {
+  flex: 2; /* Toma más espacio */
+  background-color: white;
+  color: #4a4a4a;
+}
+
+.inactiveRight {
+  flex: 1; /* Toma menos espacio */
+  background-color: #e35145;
+  color: white;
+}
+
+/* ESTADO ON: [ ON (estrecho) | MODO LIBRE (ancho) ] */
+.activeLeft {
+  flex: 1; /* Se encoge */
+  background-color: #5bc0de;
+  color: #333;
+}
+
+.activeRight {
+  flex: 2; /* Se agranda */
+  background-color: white;
+  color: #4a4a4a;
+}
